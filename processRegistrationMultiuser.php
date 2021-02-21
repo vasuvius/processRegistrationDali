@@ -24,7 +24,7 @@ $subjectID = (string) $_POST['subjectID']; // grab the subject ID
 
 $headsetID = (string) $_POST['headsetID']; // grab headset ID
 
-$makeNew = (string) $_POST['makeNew'];
+$makeNew = (string) $_POST['makeNew']; // BOOL: if true, makeNew, if False, don't
 
 $SIDFound = false; // if SID found, no need to append
 
@@ -37,7 +37,6 @@ while(! feof($file))
 		if ($row[1] == $subjectID){
 			$SIDFound = true;
 			echo($row[0] . "|"); // if found, print headsetID
-			// break; // we've found out ID, no need to keep looking (for first take, we want to find all ID's)
 		}
 		else{
 			// all other subect ID's on the headset, up to the SID we care about
